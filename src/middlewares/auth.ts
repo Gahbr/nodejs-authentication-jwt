@@ -10,7 +10,7 @@ export const Auth = {
             let hash: String = req.headers.authorization.substring(6);
             let decoded: String = Buffer.from(hash, 'base64').toString();
             let data : String[] = decoded.split(':');
-
+            
             if(data.length === 2){
                 let hasUser = await User.findOne({
                     where: {
